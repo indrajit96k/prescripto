@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { Appcontext } from '../context/Appcontext';
 import { assets } from '../assets/assets_frontend/assets';
+import RelatedDoctors from '../components/RelatedDoctors';
 
 const Appointment = () => {
   const { docid } = useParams();
@@ -13,7 +14,7 @@ const Appointment = () => {
   const [slottime, setslottime] = useState("");
 
   const fetchdocinfo = async () => {
-    const docinfo = doctors.find(doc => doc.id === docid);
+    const docinfo = doctors.find(doc => doc._id === docid);
     setdocinfo(docinfo);
     console.log(docinfo);
   };
@@ -119,8 +120,11 @@ const Appointment = () => {
 
           ))}
         </div>
+        <button className='bg-indigo-500 text-white text-sm font-ligh px-14 py-3 rounded-full my-6'>Book an appointment</button>
 
       </div>
+      {/* related doctors */}
+      <RelatedDoctors docid={docid} speciality={docinfo.speciality}></RelatedDoctors>
     </div>
   );
 };
