@@ -42,7 +42,7 @@ prescripto/
 
 Clone the repository
 
-git clone https://github.com/your-username/prescripto.git
+git clone https://github.com/indrajit96k/prescripto.git
 cd prescripto
 
 
@@ -65,11 +65,8 @@ Start backend
 cd backend
 npm start
 
-
 Start frontend
 
 cd frontend
 npm start
 
-
-Open in browser → http://localhost:4000
